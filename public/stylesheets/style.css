@@ -8,19 +8,27 @@ body{
   background-size: cover;
   padding: 0px;
   margin-top: 0px;
-  height: 100vh;
-  width: 100vw;
-  background-position: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-position: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #artistbtn {
-  color: red;
+    border: none;
+  color: white;
   margin-top: 5px;
-  width: 40%;
-  display:flex; 
+  height: 20px;
+  width: 180px;
+  display: inline-block; 
   align-self: center;
+  align-items: center;
+ 
+  background-color: rgb(231, 76, 60);
+  outline: 0;
+cursor: pointer;
+
 }
 
 #form-container{
@@ -30,13 +38,17 @@ body{
     padding: 500px;
 }
 input{
-    width:60%;
-    height: 80%;
+    width:300px;
+    height: 20px;
     display:flex; 
     align-self: center;
 }
 form {
+background-color: rgba(248, 249, 249, 0.494);
+position: fixed;
   display: flex;
   flex-direction: column;
-  width: 200%;
+  padding: 50px;
+  width: 500px;
+  height: 90px;
 }
