@@ -1,0 +1,42 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+#home {
+  background-image: url("/images/spotify-background.jpeg");
+  background-size: cover;
+  padding: 0px;
+  margin-top: 0px;
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#artistbtn {
+  color: red;
+  margin-top: 5px;
+  width: 40%;
+  display:flex; 
+  align-self: center;
+}
+
+#form-container{
+    display: flex;
+    justify-content:center;
+    align-content: center;
+    padding: 500px;
+}
+input{
+    width:60%;
+    height: 80%;
+    display:flex; 
+    align-self: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 200%;
+}
