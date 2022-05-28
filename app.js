@@ -7,6 +7,7 @@ const expressLayouts = require('express-ejs-layouts')
 
 // require spotify-web-api-node package here:
 const SpotifyWebApi = require('spotify-web-api-node');
+const query = require('express/lib/middleware/query');
 
 const app = express();
 
@@ -32,6 +33,18 @@ app.get("/", (req, res, next) => {
     res.render('index')
 })
 
+//get Artist
+app.get("/artist-search", (req, res, next) => {
+  
+  const{artistSearch} = req.query
+  spotifyApi
+  .searchArtists(artistSearch)
+  .then(data => {
+    console.log("DATA FROM API", data.body)
+    res.render('artist-search-results')
+  })
+  .catch(err => console.log('The error while searching artists occurred: ', err));
+})
 
 
 
