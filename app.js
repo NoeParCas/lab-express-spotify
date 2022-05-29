@@ -58,14 +58,63 @@ app.get("/albums/:id", (req, res, next) => {
   spotifyApi
   .getArtistAlbums(id)
   .then(artistInfo =>{
-
     const albums = artistInfo.body.items
+    console.log("ALBUMS", albums)
 
     res.render("albums", {albums})
   })
   .catch(err => console.log('The error while searching ALBUMS occurred: ', err));
 })
 
+app.get("/tracks/:id", (req, res, next) => {
+
+  const {id} = req.params
+
+  spotifyApi
+  .getAlbumTracks(id,  { limit : 5, offset : 1 })
+  .then(tracks =>{
+    const albumInfo =tracks.body.items
+
+    //albumInfo.forEach(album =>{
+      //console.log("Artistas", album.artists)
+      // Artistas [
+      //   {
+      //     external_urls: {
+      //       spotify: 'https://open.spotify.com/artist/53A0W3U0s8diEn9RhXQhVz'
+      //     },
+      //     href: 'https://api.spotify.com/v1/artists/53A0W3U0s8diEn9RhXQhVz',
+      //     id: '53A0W3U0s8diEn9RhXQhVz',
+      //     name: 'Keane',
+      //     type: 'artist',
+      //     uri: 'spotify:artist:53A0W3U0s8diEn9RhXQhVz'
+      //   }
+      // ]
+    //})
+    //console.log('TRACKS', albumInfo)
+
+    // TRACKS [
+    //   {
+    //     artists: [ [Object] ],
+    //     available_markets: [],
+    //     disc_number: 1,
+    //     duration_ms: 235880,
+    //     explicit: false,
+    //     external_urls: {
+    //       spotify: 'https://open.spotify.com/track/0HJQD8uqX2Bq5HVdLnd3ep'
+    //     },
+    //     href: 'https://api.spotify.com/v1/tracks/0HJQD8uqX2Bq5HVdLnd3ep',
+    //     id: '0HJQD8uqX2Bq5HVdLnd3ep',
+    //     is_local: false,
+    //     name: 'Somewhere Only We Know',
+    //     preview_url: null,
+    //     track_number: 2,
+    //     type: 'track',
+    //     uri: 'spotify:track:0HJQD8uqX2Bq5HVdLnd3ep'
+    //   },
+    res.render("tracks", {albumInfo})
+  })
+  .catch(err => console.log('The error while searching TRACKS occurred: ', err));
+})
 
 
 app.listen(3000, () => console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊'));

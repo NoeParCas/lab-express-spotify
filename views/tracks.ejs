@@ -1,0 +1,19 @@
+
+    
+ 
+    <h1>This is the track page of :<%= albumInfo[0].artists[0].name %>  </h1>
+  
+   
+
+
+<div>
+    <% albumInfo.forEach(album => { %>
+        
+    
+    <figure>
+        
+        <figcaption> Listen to : <%= album.name %> </figcaption>
+        <audio controls src="<%=album.preview_url %>">Your browser does not support the <code>audio</code>element.</audio>
+    </figure> 
+    <% }) %>
+</div>

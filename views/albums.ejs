@@ -4,6 +4,6 @@
     <% albums.forEach(album => { %>
      <h3><%= album.name %> </h3>
      <img src="<%= album.images[2].url %> " alt="Album Images" width="<%= album.images[2].width %> " height="<%= album.images[2].height %>">
-     <a href="/track/:<%= album.id %> "><button>View Tracks</button></a>
+     <a href="/tracks/<%= album.id%> "><button>View Tracks</button></a>
     <% }) %>
 </div>

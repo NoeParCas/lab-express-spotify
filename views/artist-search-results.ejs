@@ -1,12 +1,12 @@
-<h1>ARTIST SEARCH</h1>
+
+<h1>ARTIST SEARCH </h1>
 
 <div>
    <% artists.forEach(artist => { %>
  
     <h3><%= artist.name %> </h3>
-    <img src="<%= artist.images[2].url %> " height=" <%= artist.images[2].height %>" width=" <%= artist.images[2].width %>" alt="Artist Img">
+    <img src="<%= artist.images[0].url %> " height=" <%= artist.images[2].height %>" width=" <%= artist.images[2].width %>" alt="Artist Img">
     
-
-    <a href="/albums/<%=artist.id%> "><button>View Albums</button></a>
+    <a href="/albums/<%=artist.id%>"><button>View Albums</button></a>
    <% }) %>
 </div> 
